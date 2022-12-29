@@ -3,19 +3,29 @@
 //By considering the terms in the Fibonacci sequence whose values do not exceed n, find the sum of the even-valued terms.
 
 function fiboEvenSum(n) {
+  // If n is not equal to 0, proceed with the rest of the function
   if(n !== 0){
+    // Initialize the sum to 0
     let sum = 0;
+    // Initialize the first two numbers in the Fibonacci sequence
     let a = 1;
     let b = 2;
+    // Continue looping while b is less than or equal to n
     while (b <= n) {
+      // If b is even, add it to the sum
       if (b % 2 == 0) {
         sum += b;
       }
+      // Calculate the next number in the Fibonacci sequence
       let c = a + b;
+      // Shift the values of a and b to the left by one
       [a , b] = [b , c]
     }
+    // Return the sum after the loop has completed
     return sum;
   }
-  else
-    return 0
+  // If n is equal to 0, return 0
+  else {
+    return 0;
+  }
 }
